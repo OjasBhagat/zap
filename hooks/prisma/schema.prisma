@@ -35,7 +35,7 @@ model Trigger{
   triggerId   String 
   Type        AvaliableTriggers @relation(fields: [triggerId], references: [id])
   zap         Zap @relation(fields: [zapId] , references: [id])
-  sortingOrder Int @default(0)
+  
 }
 
 model Action{
@@ -43,7 +43,8 @@ model Action{
  zapId            String
  zap              Zap @relation(fields:[zapId] , references:[id])
  actionId         String
- type             AvaliableAction @relation(fields: [actionId] , references: [id])         
+ type             AvaliableAction @relation(fields: [actionId] , references: [id])   
+ sortingOrder Int @default(0)      
 
 }
 model AvaliableAction{
